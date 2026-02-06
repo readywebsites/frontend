@@ -2,25 +2,29 @@ import Image from "next/image";
 
 const Enquiry = () => {
   return (
-    <section id="chapter-7" className="chapter" data-chapter="7">
-      <div className="chapter-background">
+    <section id="chapter-7" className="chapter enquiry-section" data-chapter="7">
+      {/* Background */}
+      <div className="chapter-background enquiry-bg">
         <Image
           src="/images/scroll-images/01-riverside.webp"
           alt="Enquiry Background"
           fill
-          className="enquiry-bg-img"
-          style={{ objectFit: "cover" }}
           priority
+          className="enquiry-bg-img"
+          sizes="100vw"
         />
         <div className="enquiry-overlay"></div>
       </div>
 
+      {/* Content */}
       <div className="chapter-content">
         <div className="content-wrapper centered">
           <h6 className="chapter-subtitle">Get In Touch</h6>
+
           <h2 className="chapter-title">
             Start Your <span className="highlight">Journey</span>
           </h2>
+
           <p>
             Ready to experience the Avadh lifestyle? Fill out the form below.
           </p>
@@ -36,6 +40,7 @@ const Enquiry = () => {
                     required
                   />
                 </div>
+
                 <div className="form-group">
                   <input
                     type="tel"
@@ -75,7 +80,7 @@ const Enquiry = () => {
                   name="message"
                   placeholder="Message (Optional)"
                   rows={4}
-                ></textarea>
+                />
               </div>
 
               <button type="submit" className="submit-button">

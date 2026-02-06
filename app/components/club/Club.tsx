@@ -39,8 +39,8 @@ const Club = () => {
             src="/images/scroll-images/03-utopia-vapi-plus.webp"
             alt="Avadh Club Lifestyle"
             className="parallax-img"
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: "cover" }}
           />
           <div className="parallax-overlay"></div>
         </div>

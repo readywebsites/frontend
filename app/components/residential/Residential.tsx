@@ -129,8 +129,8 @@ const Residential = () => {
             src="/images/scroll-images/01-riverside.webp"
             alt="Luxury Real Estate Background"
             className="parallax-img"
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: "cover" }}
           />
           <div className="parallax-overlay"></div>
         </div>
