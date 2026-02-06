@@ -7,12 +7,14 @@ const Enquiry = () => {
         <Image
           src="/images/scroll-images/01-riverside.webp"
           alt="Enquiry Background"
+          fill
           className="enquiry-bg-img"
-          layout="fill"
-          objectFit="cover"
+          style={{ objectFit: "cover" }}
+          priority
         />
         <div className="enquiry-overlay"></div>
       </div>
+
       <div className="chapter-content">
         <div className="content-wrapper centered">
           <h6 className="chapter-subtitle">Get In Touch</h6>
@@ -53,9 +55,10 @@ const Enquiry = () => {
                     required
                   />
                 </div>
+
                 <div className="form-group">
-                  <select name="project" required>
-                    <option value="" disabled selected>
+                  <select name="project" required defaultValue="">
+                    <option value="" disabled>
                       Interested Project
                     </option>
                     <option value="avadh-antilia">Avadh Antilia</option>
