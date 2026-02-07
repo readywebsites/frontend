@@ -283,7 +283,9 @@ const SidebarNav = () => {
           <li className="nav-item" data-chapter="6">
             About Us
           </li>
-          <li className="nav-item contact-trigger">Contact</li>
+          <li className="nav-item">
+            <Link href="/enquiry">Contact</Link>
+          </li>
         </ul>
 
         <div className="nav-footer">
