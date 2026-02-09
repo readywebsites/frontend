@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,7 +17,7 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({
   image,
   badge,
-  badgeClass,
+  badgeClass = "",
   title,
   location,
   description,
@@ -28,17 +30,35 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       data-delay={delay}
       data-location={location}
     >
+      {/* IMAGE WRAPPER – IMPORTANT */}
       <div className="res-card-image">
-        <Image src={image} alt={title} width={400} height={300} loading="lazy" />
-        {badge && <div className={`res-card-badge ${badgeClass}`}>{badge}</div>}
+        <Image
+          src={image}
+          alt={title}
+          fill
+          sizes="(max-width: 768px) 100vw, 320px"
+          className="res-card-img"
+          priority={false}
+        />
+
+        {badge && (
+          <span className={`res-card-badge ${badgeClass}`}>
+            {badge}
+          </span>
+        )}
       </div>
+
+      {/* CONTENT */}
       <div className="res-card-content">
         <h4>{title}</h4>
+
         <p className="res-location">
           <i className="fas fa-map-marker-alt"></i> {location}
         </p>
+
         <div className="res-card-footer">
           <span>{description}</span>
+
           <Link href={link} className="res-link">
             Explore <i className="fas fa-arrow-right"></i>
           </Link>
