@@ -134,7 +134,7 @@ const Residential = () => {
         {/* ONGOING */}
         <h3 className="category-title">On-Going Projects</h3>
         <div className="residential-grid">
-          {ongoingProjects.map((project) => (
+          {[...ongoingProjects].map((project) => (
             <ProjectCard key={project.title} {...project} />
           ))}
         </div>
@@ -142,7 +142,7 @@ const Residential = () => {
         {/* COMPLETED */}
         <h3 className="category-title">Completed Projects</h3>
         <div className="residential-grid">
-          {completedProjects.map((project) => (
+          {[...completedProjects].map((project) => (
             <ProjectCard key={project.title} {...project} />
           ))}
         </div>
