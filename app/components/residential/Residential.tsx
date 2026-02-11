@@ -133,7 +133,7 @@ const Residential = () => {
 
         {/* ONGOING */}
         <h3 className="category-title">On-Going Projects</h3>
-        <div className="residential-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "30px", marginBottom: "50px" }}>
+        <div className="mb-[50px] grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-[30px]">
           {[...ongoingProjects].map((project) => (
             <ProjectCard key={project.title} {...project} />
           ))}
@@ -141,7 +141,7 @@ const Residential = () => {
 
         {/* COMPLETED */}
         <h3 className="category-title">Completed Projects</h3>
-        <div className="residential-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "30px" }}>
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-[30px]">
           {[...completedProjects].map((project) => (
             <ProjectCard key={project.title} {...project} />
           ))}

@@ -26,49 +26,26 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <div
-      className="res-project-card slide-in-right"
+      className="res-project-card slide-in-right flex h-full min-w-[300px] flex-col overflow-hidden rounded-xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-300 ease-in-out hover:-translate-y-2.5 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)]"
       data-delay={delay}
       data-location={location}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        backgroundColor: "#fff",
-        borderRadius: "12px",
-        overflow: "hidden",
-        boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
-        height: "100%",
-        minWidth: "300px", // Ensures card maintains width in sliders
-        transition: "transform 0.3s ease, box-shadow 0.3s ease",
-      }}
     >
       {/* IMAGE WRAPPER – IMPORTANT */}
-      <div className="res-card-image" style={{ position: "relative", width: "100%", height: "250px" }}>
+      <div className="relative h-[250px] w-full">
         <Image
           src={image}
           alt={title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="res-card-img"
-          style={{ objectFit: "cover" }}
+          className="object-cover"
           priority={false}
         />
 
         {badge && (
           <span
-            className={`res-card-badge ${badgeClass}`}
-            style={{
-              position: "absolute",
-              top: "12px",
-              left: "12px",
-              backgroundColor: badgeClass === "completed" ? "#27ae60" : "#e74c3c",
-              color: "#fff",
-              padding: "4px 12px",
-              borderRadius: "20px",
-              fontSize: "0.75rem",
-              fontWeight: "600",
-              zIndex: 10,
-              boxShadow: "0 2px 5px rgba(0,0,0,0.2)",
-            }}
+            className={`absolute left-3 top-3 z-10 rounded-full px-3 py-1 text-xs font-semibold text-white shadow-[0_2px_5px_rgba(0,0,0,0.2)] ${
+              badgeClass === "completed" ? "bg-[#27ae60]" : "bg-[#e74c3c]"
+            } ${badgeClass}`}
           >
             {badge}
           </span>
@@ -76,18 +53,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
 
       {/* CONTENT */}
-      <div className="res-card-content" style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1 }}>
-        <h4 style={{ fontSize: "1.25rem", fontWeight: "700", marginBottom: "8px", color: "#2c3e50" }}>{title}</h4>
+      <div className="flex flex-grow flex-col p-5">
+        <h4 className="mb-2 text-xl font-bold text-[#2c3e50]">{title}</h4>
 
-        <p className="res-location" style={{ color: "#7f8c8d", fontSize: "0.9rem", marginBottom: "16px", display: "flex", alignItems: "center", gap: "6px" }}>
-          <i className="fas fa-map-marker-alt" style={{ color: "#e74c3c" }}></i> {location}
+        <p className="mb-4 flex items-center gap-1.5 text-[0.9rem] text-[#7f8c8d]">
+          <i className="fas fa-map-marker-alt text-[#e74c3c]"></i> {location}
         </p>
 
-        <div className="res-card-footer" style={{ marginTop: "auto", paddingTop: "16px", borderTop: "1px solid #eee", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <span style={{ fontSize: "0.9rem", color: "#34495e", fontWeight: "500" }}>{description}</span>
+        <div className="mt-auto flex items-center justify-between border-t border-gray-200 pt-4">
+          <span className="text-[0.9rem] font-medium text-[#34495e]">{description}</span>
 
-          <Link href={link} className="res-link" style={{ color: "#e74c3c", fontWeight: "600", fontSize: "0.9rem", textDecoration: "none", display: "flex", alignItems: "center", gap: "5px" }}>
-            Explore <i className="fas fa-arrow-right"></i>
+          <Link
+            href={link}
+            className="group flex items-center gap-1 text-[0.9rem] font-semibold text-[#e74c3c] no-underline"
+          >
+            Explore <i className="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
           </Link>
         </div>
       </div>
