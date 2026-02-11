@@ -151,7 +151,7 @@ const Commercial = () => {
               <button className="scroll-arrow left-arrow" aria-label="Scroll Left">
                 <i className="fas fa-chevron-left"></i>
               </button>
-              <div className="residential-grid">
+              <div className="residential-grid" style={{ display: "flex", overflowX: "auto", gap: "30px", padding: "20px 5px", scrollSnapType: "x mandatory", scrollBehavior: "smooth" }}>
                 {ongoingProjects.map((project) => (
                   <ProjectCard key={project.title} {...project} />
                 ))}
@@ -174,7 +174,7 @@ const Commercial = () => {
               <button className="scroll-arrow left-arrow" aria-label="Scroll Left">
                 <i className="fas fa-chevron-left"></i>
               </button>
-              <div className="residential-grid">
+              <div className="residential-grid" style={{ display: "flex", overflowX: "auto", gap: "30px", padding: "20px 5px", scrollSnapType: "x mandatory", scrollBehavior: "smooth" }}>
                 {completedProjects.map((project) => (
                   <ProjectCard key={project.title} {...project} />
                 ))}
