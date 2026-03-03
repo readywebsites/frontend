@@ -31,13 +31,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       data-location={location}
     >
       {/* IMAGE WRAPPER – IMPORTANT */}
-      <div className="relative h-[250px] w-full">
+      <div className="relative w-full overflow-hidden" style={{ height: '250px' }}>
         <Image
           src={image}
           alt={title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover"
+          className="object-cover will-change-transform"
           priority={false}
         />
 
