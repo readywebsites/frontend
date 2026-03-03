@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import ProjectCard from "./ProjectCard";
 
 const ongoingProjects = [
@@ -124,28 +123,40 @@ const completedProjects = [
 
 const Residential = () => {
   return (
-   <section className="residential-section">
-      <div className="chapter-content">
-        <h6 className="chapter-subtitle">Residential Excellence</h6>
-        <h2 className="chapter-title">
-          Crafting <span className="highlight">Dream Homes</span>
-        </h2>
+    <section className="residential-section py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4">
+
+        <div className="text-center mb-12">
+          <h6 className="text-sm uppercase tracking-widest text-gray-500">
+            Residential Excellence
+          </h6>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2">
+            Crafting <span className="text-yellow-500">Dream Homes</span>
+          </h2>
+        </div>
 
         {/* ONGOING */}
-        <h3 className="category-title">On-Going Projects</h3>
-        <div className="mb-[50px] grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-[30px]">
-          {[...ongoingProjects].map((project) => (
+        <h3 className="text-2xl font-semibold mb-6">
+          On-Going Projects
+        </h3>
+
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-16">
+          {ongoingProjects.map((project) => (
             <ProjectCard key={project.title} {...project} />
           ))}
         </div>
 
         {/* COMPLETED */}
-        <h3 className="category-title">Completed Projects</h3>
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-[30px]">
-          {[...completedProjects].map((project) => (
+        <h3 className="text-2xl font-semibold mb-6">
+          Completed Projects
+        </h3>
+
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {completedProjects.map((project) => (
             <ProjectCard key={project.title} {...project} />
           ))}
         </div>
+
       </div>
     </section>
   );
