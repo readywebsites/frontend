@@ -31,7 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       data-location={location}
     >
       {/* IMAGE WRAPPER – IMPORTANT */}
-      <div className="relative w-full overflow-hidden" style={{ height: '250px' }}>
+      <div className="w-full overflow-hidden" style={{ position: 'relative', height: '250px' }}>
         <Image
           src={image}
           alt={title}
