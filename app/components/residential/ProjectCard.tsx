@@ -26,26 +26,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <div
-      className="res-project-card slide-in-right flex h-full min-w-[300px] flex-col overflow-hidden rounded-xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-300 ease-in-out hover:-translate-y-2.5 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)]"
+      className="res-project-card slide-in-right flex h-full min-w-[300px] flex-col overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
       data-delay={delay}
       data-location={location}
     >
-      {/* IMAGE WRAPPER – IMPORTANT */}
-      <div className="w-full overflow-hidden" style={{ position: 'relative', height: '250px' }}>
+      
+      {/* ✅ IMAGE WRAPPER FIXED */}
+      <div className="relative w-full h-[250px] overflow-hidden">
         <Image
           src={image}
           alt={title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover will-change-transform"
-          priority={false}
+          className="object-cover"
         />
 
         {badge && (
           <span
-            className={`absolute left-3 top-3 z-10 rounded-full px-3 py-1 text-xs font-semibold text-white shadow-[0_2px_5px_rgba(0,0,0,0.2)] ${
-              badgeClass === "completed" ? "bg-[#27ae60]" : "bg-[#e74c3c]"
-            } ${badgeClass}`}
+            className={`absolute left-3 top-3 z-10 rounded-full px-3 py-1 text-xs font-semibold text-white shadow ${
+              badgeClass === "completed"
+                ? "bg-green-600"
+                : "bg-red-500"
+            }`}
           >
             {badge}
           </span>
@@ -54,20 +56,24 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
       {/* CONTENT */}
       <div className="flex flex-grow flex-col p-5">
-        <h4 className="mb-2 text-xl font-bold text-[#2c3e50]">{title}</h4>
+        <h4 className="mb-2 text-xl font-bold text-gray-800">
+          {title}
+        </h4>
 
-        <p className="mb-4 flex items-center gap-1.5 text-[0.9rem] text-[#7f8c8d]">
-          <i className="fas fa-map-marker-alt text-[#e74c3c]"></i> {location}
+        <p className="mb-4 flex items-center gap-1 text-sm text-gray-500">
+          {location}
         </p>
 
-        <div className="mt-auto flex items-center justify-between border-t border-gray-200 pt-4">
-          <span className="text-[0.9rem] font-medium text-[#34495e]">{description}</span>
+        <div className="mt-auto flex items-center justify-between border-t pt-4">
+          <span className="text-sm font-medium text-gray-700">
+            {description}
+          </span>
 
           <Link
             href={link}
-            className="group flex items-center gap-1 text-[0.9rem] font-semibold text-[#e74c3c] no-underline"
+            className="group flex items-center gap-1 text-sm font-semibold text-red-500"
           >
-            Explore <i className="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
+            Explore →
           </Link>
         </div>
       </div>
