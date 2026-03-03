@@ -124,7 +124,7 @@ const completedProjects = [
 
 const Residential = () => {
   return (
-    <section className="chapter residential-section">
+   <section className="residential-section">
       <div className="chapter-content">
         <h6 className="chapter-subtitle">Residential Excellence</h6>
         <h2 className="chapter-title">
